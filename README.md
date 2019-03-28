@@ -14,8 +14,9 @@ It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigDat
 
 ## upload data into oss
 ![](/demo_screenshot/oss_create.png)
-
-
+![](/demo_screenshot/oss_create_folder_layout.png)
+![](/demo_screenshot/oss_upload.png.png)
+![](/demo_screenshot/oss_access.png.png)
 
 
 
