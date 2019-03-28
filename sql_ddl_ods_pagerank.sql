@@ -3,3 +3,5 @@ create table if not exists ods_raw_pagerank (
     to_user string,
     weight double
 );
+
+-- attention, we ignore partition for this demo
