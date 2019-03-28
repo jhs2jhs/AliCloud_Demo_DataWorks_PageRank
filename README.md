@@ -66,7 +66,7 @@ drop table if exists dwd_pagerank;
 
 PAI -name PageRankWithWeight
     -project algo_public
-    -DinputEdgeTableName=ods_pagerank
+    -DinputEdgeTableName=ods_raw_pagerank
     -DfromVertexCol=from_user
     -DtoVertexCol=to_user
     -DoutputTableName=dwd_pagerank
@@ -92,10 +92,14 @@ Go back to dataworks, and do last step to sync data into oss for further consump
 ![alt](/demo_screenshot/dw_sync_opds_to_oss.png)
 
 You can do back to the canvas. Run all process in one go. 
-![alt](/demo_screenshot/dw_in_one_go.png)
+![alt](/demo_screenshot/dw_run_in_one_go.png)
 
 You can see the result file appear in /out/ folder.
 ![alt](/demo_screenshot/oss_out.png)
+
+
+## publish datawork workflow so we can call in API
+
 
 
 .png
