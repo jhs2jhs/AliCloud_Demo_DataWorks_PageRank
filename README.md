@@ -13,10 +13,16 @@ It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigDat
 # Workshop Step-by-Step
 
 ## upload data into oss
-![](/demo_screenshot/oss_create.png)
-![](/demo_screenshot/oss_create_folder_layout.png)
-![](/demo_screenshot/oss_upload.png.png)
-![](/demo_screenshot/oss_access.png.png)
+create a new oss bucket called “demopageranker”. 
+![alt](/demo_screenshot/oss_create.png)
+Create a ‘in’ folder to keep raw input data, and a ‘out’ folder for result.
+![alt](/demo_screenshot/oss_create_folder_layout.png)
+Change filename locally into “slack_example_with_head.csv” [or any other file name you like]. Click on “upload” button to upload the file. 
+![alt](/demo_screenshot/oss_upload.png.png)
+Note down endpoint connection configuration information. 
+![alt](/demo_screenshot/oss_access.png.png)
+
+
 
 
 
