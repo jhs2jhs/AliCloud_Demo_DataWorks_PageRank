@@ -3,7 +3,7 @@ drop table if exists dwd_pagerank;
 
 PAI -name PageRankWithWeight
     -project algo_public
-    -DinputEdgeTableName=ods_pagerank
+    -DinputEdgeTableName=ods_raw_pagerank
     -DfromVertexCol=from_user
     -DtoVertexCol=to_user
     -DoutputTableName=dwd_pagerank
