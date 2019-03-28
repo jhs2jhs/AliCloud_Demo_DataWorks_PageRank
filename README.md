@@ -23,14 +23,27 @@ Note down endpoint connection configuration information.
 ![alt](/demo_screenshot/oss_access.png)
 
 ## create dataworks task
-https://workbench.data.aliyun.com/consolenew#/ 
-go to datawork space and create a workspace if you have not. For example, I created workspace called “jhs_pagerank_sh”. Make sure you select to enable PAI and Data Integration. 
+go to datawork [console](https://workbench.data.aliyun.com/consolenew#/) and create a workspace if you have not. For example, I created workspace called “jhs_pagerank_sh”. Make sure you select to enable PAI and Data Integration. 
 ![alt](/demo_screenshot/dw_create_workspace.png)
+
+Click on “data integration” button in the workspace and then connect dataworks to oss:
+![alt](/demo_screenshot/dw_connect_data_source.png)
+![alt](/demo_screenshot/dw_connect_data_source_oss.png)
+![alt](/demo_screenshot/dw_oss_connect_test.png)
+
+The AccessKey info can be found in : https://usercenter.console.aliyun.com/#/manage/ak 
+![alt](/demo_screenshot/dw_get_ak.png)
+
+Go to “datastudio” in dataworks to create a business flow, such as “pagerank_sh_adhoc”
+
+.png
+
+.png
 .png
 
 
 
-
+![alt](/demo_screenshot/dw_create_workspace.png)
 
 
 curl http://demopageranker.oss-eu-central-1.aliyuncs.com/dwd_pagerank_out.csv
