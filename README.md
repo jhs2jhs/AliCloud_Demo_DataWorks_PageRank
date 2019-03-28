@@ -35,10 +35,10 @@ The AccessKey info can be found in : https://usercenter.console.aliyun.com/#/man
 ![alt](/demo_screenshot/dw_get_ak.png)
 
 Go to “datastudio” in dataworks and then select __Ad-hoc business flow__ to create a ad-hoc business flow, such as “pagerank_sh_adhoc”. At the moment, only __Ad-hoc business flow__ can work with API, others can only work with schedule in IDE. 
-![alt](/demo_screenshot/dw_create_adhoc_bf.png)
+![alt](/demo_screenshot/dw_create_adhoc_bf.jpg)
 
 In the business flow, let us design a workflow as bellow:
-![alt](/demo_screenshot/dw_wf_overview.png)
+![alt](/demo_screenshot/dw_wf_overview.jpg)
 
 “vn_start” is a virtual node. Make sure you configure to use root node as bellow:
 ![alt](/demo_screenshot/dw_virtual_node.png)
@@ -86,13 +86,13 @@ create table if not exists dwd_pagerank_out (
 
 insert into dwd_pagerank_out (user, weight, ds) select *, getdate() from dwd_pagerank;
 ```
-![alt](/demo_screenshot/dw_ddl_dwd_pagerank.png)
+![alt](/demo_screenshot/dw_ddl_dwd_pagerank.jpg)
 
 Go back to dataworks, and do last step to sync data into oss for further consumption. And then run it. 
 ![alt](/demo_screenshot/dw_sync_opds_to_oss.png)
 
 You can do back to the canvas. Run all process in one go. 
-![alt](/demo_screenshot/dw_run_in_one_go.png)
+![alt](/demo_screenshot/dw_run_in_one_go.jpg)
 
 You can see the result file appear in /out/ folder.
 ![alt](/demo_screenshot/oss_out.png)
