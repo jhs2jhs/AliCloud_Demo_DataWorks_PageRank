@@ -97,9 +97,32 @@ You can do back to the canvas. Run all process in one go.
 You can see the result file appear in /out/ folder.
 ![alt](/demo_screenshot/oss_out.png)
 
+You can test if output file can be visit with http get
+![alt](/demo_screenshot/oss_out_check.png)
+
 
 ## publish datawork workflow so we can call in API
+You need to submit the manual ad-hoc task in order to be called via api. 
+![alt](/demo_screenshot/dw_submit.jpg)
+![alt](/demo_screenshot/dw_submit_complete.jpg)
 
+## configure python environment to call API
+install [brew](https://brew.sh/) if you have not done so in macbook:
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+install python2 if you have not done so in brew:
+```
+```
+
+install jupyter notebook if you have not done so in brew:
+```
+```
+
+install aliyun-python-sdk
+```
+```
 
 
 .png
