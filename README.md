@@ -8,11 +8,12 @@ It demonstrates on a use case to integrate Dataworks with API call, including:
 4. create a wrapper around API call to extend the integration
 
 # Value 
+It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigData/MachineLearning service.
 
 # Workshop Step-by-Step
 
 ## upload data into oss
-
+![](/demo_screenshot/oss_create.png)
 
 
 
