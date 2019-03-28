@@ -52,9 +52,57 @@ create table if not exists ods_raw_pagerank (
     weight double
 );
 ```
+![alt](/demo_screenshot/dw_ddl_ods.png)
+
+
+In “sync_oss_to_odps”, we configure to set up data ingestion from oss and store in odps (MaxCompute). Click “run” button to do the first ingestion. 
+![alt](/demo_screenshot/dw_sync_oss_to_odps.png)
+
+
+In “ddl_dwd_pagerank”, paste bellow sql to create a placeholder to store result from PAI. The table is called “dwd_pagerank_out”.
+```
+-- run pai to get pagerank result
+drop table if exists dwd_pagerank;
+
+PAI -name PageRankWithWeight
+    -project algo_public
+    -DinputEdgeTableName=ods_pagerank
+    -DfromVertexCol=from_user
+    -DtoVertexCol=to_user
+    -DoutputTableName=dwd_pagerank
+    -DhasEdgeWeight=true
+    -DedgeWeightCol=weight
+    -DmaxIter 100;
+
+
+-- add time information to sync out
+drop table if exists dwd_pagerank_out;
+
+create table if not exists dwd_pagerank_out (
+    user string,
+    weight double,
+    ds string
+);
+
+insert into dwd_pagerank_out (user, weight, ds) select *, getdate() from dwd_pagerank;
+```
+![alt](/demo_screenshot/dw_ddl_dwd_pagerank.png)
+
+Go back to dataworks, and do last step to sync data into oss for further consumption. And then run it. 
+![alt](/demo_screenshot/dw_sync_opds_to_oss.png)
+
+You can do back to the canvas. Run all process in one go. 
+![alt](/demo_screenshot/dw_in_one_go.png)
+
+You can see the result file appear in /out/ folder.
+![alt](/demo_screenshot/oss_out.png)
+
+
+.png
 
 
 
+.png
 .png
 
 .png
