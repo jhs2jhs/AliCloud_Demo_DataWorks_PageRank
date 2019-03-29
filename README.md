@@ -139,8 +139,66 @@ install [aliyun-python-sdk](https://github.com/aliyun/aliyun-openapi-python-sdk)
 pip3 install aliyun-python-sdk-core
 ```
 
-run command to call python code
+python function to create a manual dag instance
+```
+def dataworks_api_create_adhoc_dag(accesskey_id, accesskey_secret, region_id, projectname, flowname, bizdate='2018-07-25 00:00:00'):
+    client = AcsClient(accesskey_id, accesskey_secret, region_id)
 
+    request = CommonRequest()
+    request.set_accept_format('json')
+    request.set_domain('dataworks.aliyuncs.com')
+    request.set_method('POST')
+    request.set_protocol_type('https') # https | http
+    request.set_version('2018-06-01')
+    request.set_action_name('CreateManualDag')
+    
+    request.add_query_param('ProjectName', projectname)
+    request.add_query_param('FlowName', flowname)
+    request.add_query_param('Bizdate', bizdate)
+
+    response = client.do_action(request)
+    #pprint(response)
+    js = json.loads(response)
+    status = 'Failed and unknown'
+    dag_id = '0'
+    if ('ReturnCode' in js):
+        if (js['ReturnCode'] == '600011'):
+            status = 'Failed and Bizdate should be in [2019-03-20 00:00:00 format]'
+        if (js['ReturnCode'] == '0') and ('ReturnValue' in js): 
+            status = 'Succeed'
+            dag_id = js['ReturnValue']
+    return js, status, dag_id
+    
+```
+
+python function to retrive dag runing status:
+```
+def dataworks_api_check_dag(accesskey_id, accesskey_secret, region_id, projectname, flowname, dag_id):
+    client = AcsClient(accesskey_id, accesskey_secret, region_id)
+
+    request = CommonRequest()
+    request.set_accept_format('json')
+    request.set_domain('dataworks.aliyuncs.com')
+    request.set_method('POST')
+    request.set_protocol_type('https') # https | http
+    request.set_version('2018-06-01')
+    request.set_action_name('SearchManualDagNodeInstance')
+
+    request.add_query_param('ProjectName', projectname)
+    request.add_query_param('DagId', dag_id)
+
+    response = client.do_action(request)
+    js = json.loads(response)
+    status = 'Failed and unknown'
+    if 'ErrCode' in js:
+        if js['ErrCode'] == '11020293069':
+            status = 'dag_id is not validated'
+        if js['ErrCode'] == '0':
+            status = 'Succeed'
+    return js, status
+```
+
+a complete e2e run-through via jupyter notebook is provided: [jupyter notebook in python3](/jpnb/datawork_api_demo_pagerank.ipynb)
 
 
 
