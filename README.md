@@ -218,11 +218,9 @@ def dataworks_api_check_dag(accesskey_id, accesskey_secret, region_id, projectna
 
 a complete e2e run-through via jupyter notebook is provided: [jupyter notebook in python3](/jpnb/datawork_api_demo_pagerank.ipynb)
 
-![alt](/demo_screenshot/dw_dag_check_adhoc.jpg)
-![alt](/demo_screenshot/dag_adhoc_check.jpg)
 ![alt](/demo_screenshot/nb_run.jpg)
 ![alt](/demo_screenshot/nb_run_successful.jpg)
-![alt](/demo_screenshot/oss_get_terminal.jpg)
-![alt](/demo_screenshot/oss_get_terminal.jpg)
+![alt](/demo_screenshot/dw_dag_check_adhoc.jpg)
+![alt](/demo_screenshot/dag_adhoc_check.jpg)
 ![alt](/demo_screenshot/oss_perm.jpg)
-
+![alt](/demo_screenshot/oss_get_terminal.jpg)
