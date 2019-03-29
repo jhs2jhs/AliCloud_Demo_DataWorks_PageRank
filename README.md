@@ -14,16 +14,25 @@ It demonstrate how to use Python or other SDK to control BigData/MachineLearning
 
 
 # Value 
-It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigData/MachineLearning service.
+Alibaba CLoud BigData/MachineLearning products are often to be used standalone in its console. However, many cases that enterprise has its own control policy, e.g. CI/CD. Therefore, it is important to show how we can integrate Alibaba Cloud products with API call. 
 
-# Dataworks
+# Product 
+
+## Dataworks
 Introduction and Documentation:
 1. [English](https://www.alibabacloud.com/help/doc-detail/94780.htm)
 2. [Chinese](https://help.aliyun.com/document_detail/93254.html)
 
+## MaxCompute
+[Introduction](https://www.alibabacloud.com/product/maxcompute)
+
+## PAI
+[Introduction](https://www.alibabacloud.com/product/machine-learning)
+
+
 # Workshop Step-by-Step
 
-## upload data into oss
+## upload data into oss [this step can be replaced via API/SDK call to interact with OSS]
 create a new oss bucket called “demopageranker”. 
 ![alt](/demo_screenshot/oss_create.png)
 Create a ‘in’ folder to keep raw input data, and a ‘out’ folder for result.
