@@ -1,7 +1,9 @@
 # AliCloud Demo of Dataworks for PageRank
 
 # Purpose
-It demonstrates on a use case to integrate Dataworks with API call, including:
+It aims to demonstrate on how to integrate AlibabaCloud Dataworks product with API to other non-AlibabaCloud product. 
+The demo 
+It demonstrates a pagerank use case of  on how to integrate with API call, including:
 1. create a PageRank algorithm in PAI
 2. create data ingestion and sync in DataWorks
 3. create step 1 and step 2 into a worktask and call externally in API
@@ -112,17 +114,31 @@ install [brew](https://brew.sh/) if you have not done so in macbook:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-install python2 if you have not done so in brew:
+install [python2, pip2](https://docs.brew.sh/Homebrew-and-Python) if you have not done so in brew:
 ```
+brew install python ## install python3.x
+brew install python@2 ## install python2.x
+pip2 --version
+pip3 --version
 ```
 
-install jupyter notebook if you have not done so in brew:
+install [jupyter notebook](https://jupyter.readthedocs.io/en/latest/install.html) if you have not done so in brew:
 ```
+pip3 install --upgrade pip
+pip3 install jupyter
 ```
 
-install aliyun-python-sdk
+install [aliyun-python-sdk](https://github.com/aliyun/aliyun-openapi-python-sdk)
 ```
+# Install the core library
+pip install aliyun-python-sdk-core
 ```
+
+run command to call python code
+
+
+
+
 
 
 .png
