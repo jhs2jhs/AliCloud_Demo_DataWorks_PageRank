@@ -2,12 +2,16 @@
 
 # Purpose
 It aims to demonstrate on how to integrate AlibabaCloud Dataworks product with API to other non-AlibabaCloud product. 
-The demo 
-It demonstrates a pagerank use case of  on how to integrate with API call, including:
+It demonstrate how to use Python or other SDK to control BigData/MachineLearning workflow in Dataworks which is supported by MaxComputer and PAI engine behind. It includes:
 1. create a PageRank algorithm in PAI
 2. create data ingestion and sync in DataWorks
 3. create step 1 and step 2 into a worktask and call externally in API
-4. create a wrapper around API call to extend the integration
+4. create a python wrapper around API call to extend the integration
+
+# Architecture
+
+![alt](/demo_screenshot/demo_architecture.png)
+
 
 # Value 
 It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigData/MachineLearning service.
