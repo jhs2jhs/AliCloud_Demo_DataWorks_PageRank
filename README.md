@@ -12,6 +12,11 @@ It demonstrates a pagerank use case of  on how to integrate with API call, inclu
 # Value 
 It demonstrates one of several ways to use Alibaba Cloud as part of a e2e BigData/MachineLearning service.
 
+# Dataworks
+Introduction and Documentation:
+1. [English](https://www.alibabacloud.com/help/doc-detail/94780.htm)
+2. [Chinese](https://help.aliyun.com/document_detail/93254.html)
+
 # Workshop Step-by-Step
 
 ## upload data into oss
