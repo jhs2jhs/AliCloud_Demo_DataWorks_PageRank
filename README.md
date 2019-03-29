@@ -1,4 +1,4 @@
-# AliCloud Demo of Dataworks for PageRank
+# AliCloud Dataworks Demo on PageRank ML via API/SDK calls
 
 # Purpose
 It aims to demonstrate on how to integrate AlibabaCloud Dataworks product with API to other non-AlibabaCloud product. 
@@ -35,11 +35,14 @@ Introduction and Documentation:
 ## upload data into oss [this step can be replaced via API/SDK call to interact with OSS]
 create a new oss bucket called “demopageranker”. 
 ![alt](/demo_screenshot/oss_create.png)
+
 Create a ‘in’ folder to keep raw input data, and a ‘out’ folder for result.
 ![alt](/demo_screenshot/oss_create_folder_layout.png)
+
 Change filename locally into “slack_example_with_head.csv” [or any other file name you like]. Click on “upload” button to upload the file. 
 ![alt](/demo_screenshot/oss_upload.png)
-Note down endpoint connection configuration information. 
+
+Note down endpoint connection configuration information for later use. 
 ![alt](/demo_screenshot/oss_access.png)
 
 ## create dataworks workflow
@@ -78,6 +81,7 @@ create table if not exists ods_raw_pagerank (
 In “sync_oss_to_odps”, we configure to set up data ingestion from oss and store in odps (MaxCompute). Click “run” button to do the first ingestion. 
 ![alt](/demo_screenshot/dw_sync_oss_to_odps.png)
 
+## PAI Machine Learning
 
 In “ddl_dwd_pagerank”, paste bellow sql to create a placeholder to store result from PAI. The table is called “dwd_pagerank_out”.
 ```
@@ -108,6 +112,7 @@ insert into dwd_pagerank_out (user, weight, ds) select *, getdate() from dwd_pag
 ```
 ![alt](/demo_screenshot/dw_ddl_dwd_pagerank.jpg)
 
+## sync result to OSS for future consumption
 Go back to dataworks, and do last step to sync data into oss for further consumption. And then run it. 
 ![alt](/demo_screenshot/dw_sync_opds_to_oss.png)
 
@@ -117,7 +122,7 @@ You can do back to the canvas. Run all process in one go.
 You can see the result file appear in /out/ folder.
 ![alt](/demo_screenshot/oss_out.png)
 
-You can test if output file can be visit with http get
+You can test if output file can be visit with http curl
 ![alt](/demo_screenshot/oss_out_check.png)
 
 
@@ -213,9 +218,11 @@ def dataworks_api_check_dag(accesskey_id, accesskey_secret, region_id, projectna
 
 a complete e2e run-through via jupyter notebook is provided: [jupyter notebook in python3](/jpnb/datawork_api_demo_pagerank.ipynb)
 
+![alt](/demo_screenshot/dag_adhoc_check.jpg)
+![alt](/demo_screenshot/dw_dag_check_adhoc.jpg.jpg)
+![alt](/demo_screenshot/nb_run.jpg.jpg)
+![alt](/demo_screenshot/nb_run_successful.jpg)
+![alt](/demo_screenshot/oss_get_terminal.jpg)
+![alt](/demo_screenshot/oss_get_terminal.jpg)
+![alt](/demo_screenshot/oss_perm.jpg)
 
-
-![alt](/demo_screenshot/dw_create_workspace.png)
-
-
-curl http://demopageranker.oss-eu-central-1.aliyuncs.com/dwd_pagerank_out.csv
