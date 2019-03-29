@@ -114,7 +114,7 @@ install [brew](https://brew.sh/) if you have not done so in macbook:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-install [python2, pip2](https://docs.brew.sh/Homebrew-and-Python) if you have not done so in brew:
+install [python3, pip3](https://docs.brew.sh/Homebrew-and-Python) if you have not done so in brew, it should also work in python2 and pip2
 ```
 brew install python ## install python3.x
 brew install python@2 ## install python2.x
@@ -131,25 +131,11 @@ pip3 install jupyter
 install [aliyun-python-sdk](https://github.com/aliyun/aliyun-openapi-python-sdk)
 ```
 # Install the core library
-pip install aliyun-python-sdk-core
+pip3 install aliyun-python-sdk-core
 ```
 
 run command to call python code
 
-
-
-
-
-
-.png
-
-
-
-.png
-.png
-
-.png
-.png
 
 
 
