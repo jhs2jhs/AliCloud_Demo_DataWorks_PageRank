@@ -224,3 +224,7 @@ a complete e2e run-through via jupyter notebook is provided: [jupyter notebook i
 ![alt](/demo_screenshot/dag_adhoc_check.jpg)
 ![alt](/demo_screenshot/oss_perm.jpg)
 ![alt](/demo_screenshot/oss_get_terminal.jpg)
+
+
+# a python wrapper for a end-to-end workflow 
+[Jupyter Notebook](https://github.com/jianhuashao/AliCloud_Demo_DataWorks_PageRank/blob/master/jpnb/e2e_workflow_v1.ipynb)
